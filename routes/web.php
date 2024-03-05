@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChildController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AdminController::class, 'index']);
+
+Route::get('/daftar_anak', [AdminController::class, 'daftar_anak' ]);
+
+Route::get('/tambah_anak', [AdminController::class,'tambah_anak']);
+
+Route::post('/child/store', [ChildController::class,'store'])->name('child.store');
