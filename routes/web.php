@@ -23,3 +23,8 @@ Route::get('/daftar_anak', [AdminController::class, 'daftar_anak' ]);
 Route::get('/tambah_anak', [AdminController::class,'tambah_anak']);
 
 Route::post('/child/store', [ChildController::class,'store'])->name('child.store');
+
+Route::get('/cari_anak', function(){
+    return view('admin/cari_anak');
+});
+
