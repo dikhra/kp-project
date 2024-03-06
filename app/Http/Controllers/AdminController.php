@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Child;
 
 class AdminController extends Controller
 {
@@ -16,8 +17,13 @@ class AdminController extends Controller
         return view("admin/tambah_anak");
     }
 
-    public function daftar_anak()
-    {
-        return view("admin/daftar_anak");
+    public function daftar_anak(){
+        return view('admin/daftar_anak', [
+            "children" => Child::all()
+        ]);
+    }
+
+    public function cari_anak(){
+        return view('admin/cari_anak');
     }
 }

@@ -1,4 +1,4 @@
-~@extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 <div class="card border-bottom-primary shadow mb-4">
@@ -6,7 +6,7 @@
     <h6 class="m-0 font-weight-bold text-primary">Form Input Data Anak</h6>
   </div>
   <div class="card-body">
-    <form action="/anak/store" method="post">
+    <form action="{{ route('child.store') }}" method="post">
       @csrf
 
       <div class="form-row">
@@ -36,7 +36,7 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="nomor_kk">Nomor KK*</label>
-          <input type="text" class="form-control" id="nomor_kk" name="nomor_kk" required placeholder="Nomor Kartu Keluarga">
+          <input type="text" class="form-control" id="no_kk" name="no_kk" required placeholder="Nomor Kartu Keluarga">
         </div>
 
         <div class="form-group col-md-6">
@@ -53,33 +53,33 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="berat_badan_lahir">Berat Badan Lahir (Kg)*</label>
-          <input type="number" step="0.1" class="form-control" id="berat_badan_lahir" name="berat_badan_lahir" placeholder="Contoh : 5.2" min="0" >
+          <input type="number" step="0.1" class="form-control" id="berat_badan" name="berat_badan" placeholder="Contoh : 5.2" min="0" >
         </div>
 
         <div class="form-group col-md-6">
           <label for="panjang_badan_lahir">Panjang Badan Lahir (cm)*</label>
-          <input type="number" class="form-control" id="panjang_badan_lahir" name="panjang_badan_lahir" placeholder="Contoh : 75" min="0" required>
+          <input type="number" class="form-control" id="panjang_badan" name="panjang_badan" placeholder="Contoh : 75" min="0" required>
         </div>
       </div>
 
       <div class="form-group">
         <label for="nama_orangtua">Nama Orang Tua*</label>
-        <input type="text" class="form-control" id="nama_orangtua" name="nama_orangtua" required placeholder="Nama orang tua">
+        <input type="text" class="form-control" id="nama_ortu" name="nama_ortu" required placeholder="Nama orang tua">
       </div>
 
       <div class="form-group">
         <label for="nik_orangtua">NIK Orang Tua*</label>
-        <input type="text" class="form-control" id="nik_orangtua" name="nik_orangtua" required placeholder="Nama orang tua">
+        <input type="text" class="form-control" id="nik_ortu" name="nik_ortu" required placeholder="Nama orang tua">
       </div>
 
       <div class="form-group">
         <label for="nomor_telepon">Nomor Telepon Orang Tua*</label>
-        <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" required placeholder="Nomor telepon orang tua">
+        <input type="text" class="form-control" id="no_ortu" name="no_ortu" required placeholder="Nomor telepon orang tua">
       </div>
 
       <div class="form-group">
         <label for="alamat">Alamat Lengkap*</label>
-        <textarea class="form-control" id="alamat" name="alamat" rows="3" required placeholder="Alamat lengkap"></textarea>
+        <textarea class="form-control" id="alamat_lengkap" name="alamat_lengkap" rows="3" required placeholder="Alamat lengkap"></textarea>
       </div>
 
       <div class="form-row">
