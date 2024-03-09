@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="card">
         <div class="card-header">
             <h6 class="m-0 font-weight-bold text-primary">Daftar Balita</h6>
@@ -32,7 +38,7 @@
                             <th>No</th>
                             <th>NIK</th>
                             <th>Nama</th>
-                            <th>Jenis Kelamin</th>
+                            <th>JK</th>
                             <th>Tanggal Lahir</th>
                             <th>Nama Ortu</th>
                             <th>Telp Ortu</th>
@@ -57,7 +63,7 @@
                                 <td>
                                     <div class="col mx-1 my-1">
                                         <div class="row">
-                                            <a href="#" class="btn btn-success btn-circle btn-sm">
+                                            <a href="/pengukuran_anak/{{ $child['nik'] }}" class="btn btn-success btn-circle btn-sm">
                                                 <i class="fas fa-plus"></i>
                                             </a>
                                             <div class="mx-1"></div>
@@ -67,7 +73,7 @@
                                         </div>
                                         <div class="mb-1"></div>
                                         <div class="row">
-                                            <a href="#" class="btn btn-info btn-circle btn-sm">
+                                            <a href="/perkembangan_anak/{{ $child['nik'] }}" class="btn btn-info btn-circle btn-sm">
                                                 <i class="fas fa-search"></i>
                                             </a>
                                             <div class="mx-1"></div>
@@ -84,12 +90,6 @@
             </div>
         </div>
     </div>
-
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
 @endsection
 
 @section('script')

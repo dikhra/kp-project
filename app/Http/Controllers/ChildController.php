@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreChildRequest;
 use Illuminate\Http\Request;
 use App\Models\Child;
+use Carbon\Carbon;
 
 class ChildController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $child = new Child;
         $child->anak_ke = $request->anak_ke;
         $child->tanggal_lahir = $request->tanggal_lahir;
@@ -25,14 +28,34 @@ class ChildController extends Controller
         $child->rw = $request->rw;
         $child->save();
 
-        return redirect('/daftar_anak')->with('success', 'Data Anak Berhasil Ditambahkan');
+        if ($child) {
+            return redirect('/daftar_anak')->with('success', 'Data Anak Berhasil Ditambahkan');
+        } else {
+            return redirect('/tambah_anak')->with('error', 'Data Anak Gagal Ditambahkan');
+        }
     }
 
-    public function update(){
+    public function getAgeNow($nik)
+    {
+        $now = Carbon::now();
 
+        $child = Child::where('nik', $nik)->first();
+
+        if ($child) {
+            $year = $now->diffInYears($child->tanggal_lahir);
+            $month = $now->diffInMonths($child->tanggal_lahir) % 12;
+            $day = $now->diffInDays($child->tanggal_lahir) % 30;
+
+            return $year . " Tahun " . $month . " Bulan " . $day . " Hari";
+        } else {
+            return "Data anak tidak ditemukan";
+        }
+    }
+    public function update()
+    {
     }
 
-    public function destroy(){
-
+    public function destroy()
+    {
     }
 }

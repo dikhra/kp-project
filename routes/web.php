@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChildController;
+use App\Http\Controllers\MeasurementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,9 @@ Route::get('/tambah_anak', [AdminController::class,'tambah_anak']);
 
 Route::get('/cari_anak', [AdminController::class,'cari_anak']);
 
-Route::post('/child/store', [ChildController::class,'store'])->name('child.store');
+Route::post('/child/store', [ChildController::class,'store']);
+Route::post('/measurement/store', [MeasurementController::class,'store']);
+
+Route::get('/perkembangan_anak/{nik}', [AdminController::class,'perkembangan_anak']);
+
+Route::get('/pengukuran_anak/{nik}', [AdminController::class,'pengukuran_anak']);

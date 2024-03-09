@@ -18,13 +18,13 @@ class CreateChildrenTable extends Migration
             $table->integer('anak_ke');
             $table->date('tanggal_lahir');
             $table->string('jenis_kelamin');
-            $table->string('no_kk');
-            $table->string('nik')->unique();
+            $table->bigInteger('no_kk');
+            $table->bigInteger('nik')->unique();
             $table->string('nama');
-            $table->integer('berat_badan');
+            $table->float('berat_badan');
             $table->integer('panjang_badan');
             $table->string('nama_ortu');
-            $table->string('nik_ortu');
+            $table->bigInteger('nik_ortu');
             $table->string('no_ortu');
             $table->string('alamat_lengkap');
             $table->string('rt')->nullable();
