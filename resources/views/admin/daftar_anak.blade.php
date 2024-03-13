@@ -38,10 +38,10 @@
                             <th>No</th>
                             <th>NIK</th>
                             <th>Nama</th>
-                            <th>JK</th>
+                            <th>Jenis Kelamin</th>
                             <th>Tanggal Lahir</th>
-                            <th>Nama Ortu</th>
-                            <th>Telp Ortu</th>
+                            <th>Nama Orang Tua</th>
+                            <th>Nomor Telepon Orang Tua</th>
                             <th>Tindakan </th>
                         </tr>
                     </thead>
