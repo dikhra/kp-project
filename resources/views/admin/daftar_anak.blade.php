@@ -46,11 +46,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($children->isEmpty())
-                            <tr>
-                                <td colspan="8" class="text-center">Tidak ada data</td>
-                            </tr>
-                        @endif
                         @foreach ($children as $key => $child)
                             <tr>
                                 <td>{{ $key + 1 }}</td>
@@ -63,17 +58,20 @@
                                 <td>
                                     <div class="col mx-1 my-1">
                                         <div class="row">
-                                            <a href="/pengukuran_anak/{{ $child['nik'] }}" class="btn btn-success btn-circle btn-sm">
+                                            <a href="/pengukuran_anak/{{ $child['nik'] }}"
+                                                class="btn btn-success btn-circle btn-sm">
                                                 <i class="fas fa-plus"></i>
                                             </a>
                                             <div class="mx-1"></div>
-                                            <a href="#" class="btn btn-danger btn-circle btn-sm">
+                                            <a href="/child/delete/{{ $child['nik'] }}"
+                                                class="btn btn-danger btn-circle btn-sm">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
                                         </div>
                                         <div class="mb-1"></div>
                                         <div class="row">
-                                            <a href="/perkembangan_anak/{{ $child['nik'] }}" class="btn btn-info btn-circle btn-sm">
+                                            <a href="/perkembangan_anak/{{ $child['nik'] }}"
+                                                class="btn btn-info btn-circle btn-sm">
                                                 <i class="fas fa-search"></i>
                                             </a>
                                             <div class="mx-1"></div>

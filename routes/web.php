@@ -19,15 +19,15 @@ use App\Http\Controllers\MeasurementController;
 
 Route::get('/dashboard', [AdminController::class, 'index']);
 
-Route::get('/daftar_anak', [AdminController::class, 'daftar_anak' ]);
+Route::get('/daftar_anak', [AdminController::class, 'daftar_anak']);
+Route::get('/child/delete/{nik}', [ChildController::class, 'delete']);
 
-Route::get('/tambah_anak', [AdminController::class,'tambah_anak']);
+Route::get('/tambah_anak', [AdminController::class, 'tambah_anak']);
+Route::post('/child/store', [ChildController::class, 'store']);
 
-Route::get('/cari_anak', [AdminController::class,'cari_anak']);
+Route::get('/cari_anak', [AdminController::class, 'cari_anak']);
 
-Route::post('/child/store', [ChildController::class,'store']);
-Route::post('/measurement/store', [MeasurementController::class,'store']);
+Route::get('/perkembangan_anak/{nik}', [AdminController::class, 'perkembangan_anak']);
 
-Route::get('/perkembangan_anak/{nik}', [AdminController::class,'perkembangan_anak']);
-
-Route::get('/pengukuran_anak/{nik}', [AdminController::class,'pengukuran_anak']);
+Route::get('/pengukuran_anak/{nik}', [AdminController::class, 'pengukuran_anak']);
+Route::post('/measurement/store', [MeasurementController::class, 'store']);

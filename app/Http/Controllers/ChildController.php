@@ -58,4 +58,16 @@ class ChildController extends Controller
     public function destroy()
     {
     }
+
+    public function delete($nik)
+    {
+        $child = Child::where('nik', $nik)->first();
+
+        if ($child) {
+            $child->delete();
+            return redirect('/daftar_anak')->with('success', 'Data Anak Berhasil Dihapus');
+        } else {
+            return redirect('/daftar_anak')->with('error', 'Data Anak Gagal Dihapus');
+        }
+    }
 }
