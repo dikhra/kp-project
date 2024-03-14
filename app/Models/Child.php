@@ -28,5 +28,8 @@ class Child extends Model
 
     protected $dates = ["tanggal_lahir"];
 
-
+    public function measurement()
+    {
+        return $this->hasMany(Measurement::class, "nik","nik");
+    }
 }

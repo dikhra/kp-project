@@ -20,8 +20,12 @@ class CreateMeasurementsTable extends Migration
             $table->date('tanggal_pengukuran');
             $table->decimal('berat_badan');
             $table->decimal('panjang_badan');
-            $table->decimal('lingkar_kepala')->nullable();
             $table->string('cara_pengukuran');
+            $table->string('bb_u');
+            $table->float('zs_bb_u');
+            $table->string('tb_u');
+            $table->float('zs_tb_u');
+            $table->decimal('lingkar_kepala')->nullable();
             $table->timestamps();
         });
     }
