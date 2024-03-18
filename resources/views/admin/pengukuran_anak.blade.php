@@ -33,6 +33,11 @@
                                 <td>{{ $child->tanggal_lahir->format('d-m-Y') }}</td>
                             </tr>
                             <tr>
+                                <td>Jenis Kelamin</td>
+                                <td>:</td>
+                                <td>{{ $child->jenis_kelamin }}</td>
+                            </tr>
+                            <tr>
                                 <td>Nama</td>
                                 <td>:</td>
                                 <td>{{ $child->nama }}</td>
@@ -151,7 +156,7 @@
                         </div>
                         <div class="form-group">
                             <label for="berat_badan">Berat Badan (kg)*</label>
-                            <input type="number" step="0.1" class="form-control" id="berat_badan" name="berat_badan"
+                            <input type="number" step="0.01" class="form-control" id="berat_badan" name="berat_badan"
                                 required min="0">
                         </div>
                         <div class="form-group">

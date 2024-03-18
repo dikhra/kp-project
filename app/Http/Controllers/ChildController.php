@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreChildRequest;
 use Illuminate\Http\Request;
 use App\Models\Child;
 use Carbon\Carbon;
@@ -35,22 +34,21 @@ class ChildController extends Controller
         }
     }
 
+
     public function getAgeNow($nik)
     {
-        $now = Carbon::now();
-
         $child = Child::where('nik', $nik)->first();
 
-        if ($child) {
-            $year = $now->diffInYears($child->tanggal_lahir);
-            $month = $now->diffInMonths($child->tanggal_lahir) % 12;
-            $day = $now->diffInDays($child->tanggal_lahir) % 30;
+        $tanggal_lahir = Carbon::parse($child->tanggal_lahir);
+        $umur = $tanggal_lahir->diffInYears(Carbon::now());
+        $bulan = $tanggal_lahir->diff(Carbon::now())->m;
+        $hari = $tanggal_lahir->diff(Carbon::now())->d;
 
-            return $year . " Tahun " . $month . " Bulan " . $day . " Hari";
-        } else {
-            return "Data anak tidak ditemukan";
-        }
+        return $umur . " tahun " . $bulan . " bulan " . $hari . " hari";
     }
+
+
+
     public function update()
     {
     }

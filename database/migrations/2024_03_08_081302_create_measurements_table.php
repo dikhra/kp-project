@@ -25,6 +25,8 @@ class CreateMeasurementsTable extends Migration
             $table->float('zs_bb_u');
             $table->string('tb_u');
             $table->float('zs_tb_u');
+            $table->string('bb_tb');
+            $table->float('zs_bb_tb');
             $table->decimal('lingkar_kepala')->nullable();
             $table->timestamps();
         });
