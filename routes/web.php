@@ -17,6 +17,10 @@ use App\Http\Controllers\MeasurementController;
 |
 */
 
+Route::get('/', function () {
+    return view('auth.login');
+});
+
 Route::get('/dashboard', [AdminController::class, 'index']);
 
 Route::get('/daftar_anak', [AdminController::class, 'daftar_anak']);
@@ -31,3 +35,4 @@ Route::get('/perkembangan_anak/{nik}', [AdminController::class, 'perkembangan_an
 
 Route::get('/pengukuran_anak/{nik}', [AdminController::class, 'pengukuran_anak']);
 Route::post('/measurement/store', [MeasurementController::class, 'store']);
+Route::get('/measurement/delete/{id}', [MeasurementController::class, 'delete']);

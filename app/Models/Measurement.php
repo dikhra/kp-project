@@ -177,26 +177,88 @@ class Measurement extends Model
                 array('Month' => 59, 'L' => -0.1477, 'M' => 18.1722, 'S' => 0.13453, 'SD3neg' => 12.3, 'SD2neg' => 14, 'SD1neg' => 15.9, 'SD0' => 18.2, 'SD1' => 20.8, 'SD2' => 23.9, 'SD3' => 27.6),
                 array('Month' => 60, 'L' => -0.1506, 'M' => 18.3366, 'S' => 0.13517, 'SD3neg' => 12.4, 'SD2neg' => 14.1, 'SD1neg' => 16, 'SD0' => 18.3, 'SD1' => 21, 'SD2' => 24.2, 'SD3' => 27.9)
             );
+        $tableZscoreGirls14Week = array(
+            array('Week' => 0, 'L' => 0.3809, 'M' => 3.2322, 'S' => 0.14171, 'SD3neg' => 2, 'SD2neg' => 2.4, 'SD1neg' => 2.8, 'SD0' => 3.2, 'SD1' => 3.7, 'SD2' => 4.2, 'SD3' => 4.8),
+            array('Week' => 1, 'L' => 0.2671, 'M' => 3.3388, 'S' => 0.146, 'SD3neg' => 2.1, 'SD2neg' => 2.5, 'SD1neg' => 2.9, 'SD0' => 3.3, 'SD1' => 3.9, 'SD2' => 4.4, 'SD3' => 5.1),
+            array('Week' => 2, 'L' => 0.2304, 'M' => 3.5693, 'S' => 0.14339, 'SD3neg' => 2.3, 'SD2neg' => 2.7, 'SD1neg' => 3.1, 'SD0' => 3.6, 'SD1' => 4.1, 'SD2' => 4.7, 'SD3' => 5.4),
+            array('Week' => 3, 'L' => 0.2024, 'M' => 3.8352, 'S' => 0.1406, 'SD3neg' => 2.5, 'SD2neg' => 2.9, 'SD1neg' => 3.3, 'SD0' => 3.8, 'SD1' => 4.4, 'SD2' => 5, 'SD3' => 5.7),
+            array('Week' => 4, 'L' => 0.1789, 'M' => 4.0987, 'S' => 0.13805, 'SD3neg' => 2.7, 'SD2neg' => 3.1, 'SD1neg' => 3.6, 'SD0' => 4.1, 'SD1' => 4.7, 'SD2' => 5.4, 'SD3' => 6.1),
+            array('Week' => 5, 'L' => 0.1582, 'M' => 4.3476, 'S' => 0.13583, 'SD3neg' => 2.9, 'SD2neg' => 3.3, 'SD1neg' => 3.8, 'SD0' => 4.3, 'SD1' => 5, 'SD2' => 5.7, 'SD3' => 6.5),
+            array('Week' => 6, 'L' => 0.1395, 'M' => 4.5793, 'S' => 0.13392, 'SD3neg' => 3, 'SD2neg' => 3.5, 'SD1neg' => 4, 'SD0' => 4.6, 'SD1' => 5.2, 'SD2' => 6, 'SD3' => 6.8),
+            array('Week' => 7, 'L' => 0.1224, 'M' => 4.795, 'S' => 0.13228, 'SD3neg' => 3.2, 'SD2neg' => 3.7, 'SD1neg' => 4.2, 'SD0' => 4.8, 'SD1' => 5.5, 'SD2' => 6.2, 'SD3' => 7.1),
+            array('Week' => 8, 'L' => 0.1065, 'M' => 4.9959, 'S' => 0.13087, 'SD3neg' => 3.3, 'SD2neg' => 3.8, 'SD1neg' => 4.4, 'SD0' => 5, 'SD1' => 5.7, 'SD2' => 6.5, 'SD3' => 7.3),
+            array('Week' => 9, 'L' => 0.0918, 'M' => 5.1842, 'S' => 0.12966, 'SD3neg' => 3.5, 'SD2neg' => 4, 'SD1neg' => 4.6, 'SD0' => 5.2, 'SD1' => 5.9, 'SD2' => 6.7, 'SD3' => 7.6),
+            array('Week' => 10, 'L' => 0.0779, 'M' => 5.3618, 'S' => 0.12861, 'SD3neg' => 3.6, 'SD2neg' => 4.1, 'SD1neg' => 4.7, 'SD0' => 5.4, 'SD1' => 6.1, 'SD2' => 6.9, 'SD3' => 7.8),
+            array('Week' => 11, 'L' => 0.0648, 'M' => 5.5295, 'S' => 0.1277, 'SD3neg' => 3.8, 'SD2neg' => 4.3, 'SD1neg' => 4.9, 'SD0' => 5.5, 'SD1' => 6.3, 'SD2' => 7.1, 'SD3' => 8.1),
+            array('Week' => 12, 'L' => 0.0525, 'M' => 5.6883, 'S' => 0.12691, 'SD3neg' => 3.9, 'SD2neg' => 4.4, 'SD1neg' => 5, 'SD0' => 5.7, 'SD1' => 6.5, 'SD2' => 7.3, 'SD3' => 8.3),
+            array('Week' => 13, 'L' => 0.0407, 'M' => 5.8393, 'S' => 0.12622, 'SD3neg' => 4, 'SD2neg' => 4.5, 'SD1neg' => 5.1, 'SD0' => 5.8, 'SD1' => 6.6, 'SD2' => 7.5, 'SD3' => 8.5)
+        );
 
-        switch ($this->child->jenis_kelamin) {
-            case "Laki-laki":
-                if ($berat < $tableZscoreBoys[$umurBulan]["SD0"]) {
-                    $bbu = ($berat - $tableZscoreBoys[$umurBulan]["SD0"]) / ($tableZscoreBoys[$umurBulan]["SD0"] - $tableZscoreBoys[$umurBulan]["SD1neg"]);
-                    return $bbu;
-                } else if ($berat > $tableZscoreBoys[$umurBulan]["SD0"]) {
-                    $bbu = ($berat - $tableZscoreBoys[$umurBulan]["SD0"]) / ($tableZscoreBoys[$umurBulan]["SD1"] - $tableZscoreBoys[$umurBulan]["SD0"]);
-                    return $bbu;
-                }
-                break;
-            case "Perempuan":
-                if ($berat < $tableZscoreGirls[$umurBulan]["SD0"]) {
-                    $bbu = ($berat - $tableZscoreGirls[$umurBulan]["SD0"]) / ($tableZscoreGirls[$umurBulan]["SD0"] - $tableZscoreGirls[$umurBulan]["SD1neg"]);
-                    return $bbu;
-                } else if ($berat > $tableZscoreGirls[$umurBulan]["SD0"]) {
-                    $bbu = ($berat - $tableZscoreGirls[$umurBulan]["SD0"]) / ($tableZscoreGirls[$umurBulan]["SD1"] - $tableZscoreGirls[$umurBulan]["SD0"]);
-                    return $bbu;
-                }
-                break;
+        $tableZscoreBoys14Week = array(
+            array('Week' => 0, 'L' => 0.3487, 'M' => 3.3464, 'S' => 0.14602, 'SD3neg' => 2.1, 'SD2neg' => 2.5, 'SD1neg' => 2.9, 'SD0' => 3.3, 'SD1' => 3.9, 'SD2' => 4.4, 'SD3' => 5),
+            array('Week' => 1, 'L' => 0.2776, 'M' => 3.4879, 'S' => 0.14483, 'SD3neg' => 2.2, 'SD2neg' => 2.6, 'SD1neg' => 3, 'SD0' => 3.5, 'SD1' => 4, 'SD2' => 4.6, 'SD3' => 5.3),
+            array('Week' => 2, 'L' => 0.2581, 'M' => 3.7529, 'S' => 0.14142, 'SD3neg' => 2.4, 'SD2neg' => 2.8, 'SD1neg' => 3.2, 'SD0' => 3.8, 'SD1' => 4.3, 'SD2' => 4.9, 'SD3' => 5.6),
+            array('Week' => 3, 'L' => 0.2442, 'M' => 4.0603, 'S' => 0.13807, 'SD3neg' => 2.6, 'SD2neg' => 3.1, 'SD1neg' => 3.5, 'SD0' => 4.1, 'SD1' => 4.7, 'SD2' => 5.3, 'SD3' => 6),
+            array('Week' => 4, 'L' => 0.2331, 'M' => 4.3671, 'S' => 0.13497, 'SD3neg' => 2.9, 'SD2neg' => 3.3, 'SD1neg' => 3.8, 'SD0' => 4.4, 'SD1' => 5, 'SD2' => 5.7, 'SD3' => 6.4),
+            array('Week' => 5, 'L' => 0.2237, 'M' => 4.659, 'S' => 0.13215, 'SD3neg' => 3.1, 'SD2neg' => 3.5, 'SD1neg' => 4.1, 'SD0' => 4.7, 'SD1' => 5.3, 'SD2' => 6, 'SD3' => 6.8),
+            array('Week' => 6, 'L' => 0.2155, 'M' => 4.9303, 'S' => 0.1296, 'SD3neg' => 3.3, 'SD2neg' => 3.8, 'SD1neg' => 4.3, 'SD0' => 4.9, 'SD1' => 5.6, 'SD2' => 6.3, 'SD3' => 7.2),
+            array('Week' => 7, 'L' => 0.2081, 'M' => 5.1817, 'S' => 0.12729, 'SD3neg' => 3.5, 'SD2neg' => 4, 'SD1neg' => 4.6, 'SD0' => 5.2, 'SD1' => 5.9, 'SD2' => 6.6, 'SD3' => 7.5),
+            array('Week' => 8, 'L' => 0.2014, 'M' => 5.4149, 'S' => 0.1252, 'SD3neg' => 3.7, 'SD2neg' => 4.2, 'SD1neg' => 4.8, 'SD0' => 5.4, 'SD1' => 6.1, 'SD2' => 6.9, 'SD3' => 7.8),
+            array('Week' => 9, 'L' => 0.1952, 'M' => 5.6319, 'S' => 0.1233, 'SD3neg' => 3.8, 'SD2neg' => 4.4, 'SD1neg' => 5, 'SD0' => 5.6, 'SD1' => 6.4, 'SD2' => 7.2, 'SD3' => 8),
+            array('Week' => 10, 'L' => 0.1894, 'M' => 5.8346, 'S' => 0.12157, 'SD3neg' => 4, 'SD2neg' => 4.5, 'SD1neg' => 5.2, 'SD0' => 5.8, 'SD1' => 6.6, 'SD2' => 7.4, 'SD3' => 8.3),
+            array('Week' => 11, 'L' => 0.184, 'M' => 6.0242, 'S' => 0.12001, 'SD3neg' => 4.2, 'SD2neg' => 4.7, 'SD1neg' => 5.3, 'SD0' => 6, 'SD1' => 6.8, 'SD2' => 7.6, 'SD3' => 8.5),
+            array('Week' => 12, 'L' => 0.1789, 'M' => 6.2019, 'S' => 0.1186, 'SD3neg' => 4.3, 'SD2neg' => 4.9, 'SD1neg' => 5.5, 'SD0' => 6.2, 'SD1' => 7, 'SD2' => 7.8, 'SD3' => 8.8),
+            array('Week' => 13, 'L' => 0.174, 'M' => 6.369, 'S' => 0.11732, 'SD3neg' => 4.4, 'SD2neg' => 5, 'SD1neg' => 5.7, 'SD0' => 6.4, 'SD1' => 7.2, 'SD2' => 8, 'SD3' => 9)
+        );
+
+        $child = Child::find($this->child->id);
+        $tanggal_lahir = Carbon::parse($child->tanggal_lahir);
+        $tanggal_pengukuran = Carbon::parse($this->tanggal_pengukuran);
+
+        $bulan = $tanggal_lahir->diffInMonths($tanggal_pengukuran);
+
+        if ($bulan <= 14) {
+            switch ($this->child->jenis_kelamin) {
+                case "Laki-laki":
+                    if ($berat < $tableZscoreBoys14Week[$bulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreBoys14Week[$bulan]["SD0"]) / ($tableZscoreBoys14Week[$bulan]["SD0"] - $tableZscoreBoys14Week[$bulan]["SD1neg"]);
+                        return $bbu;
+                    } else if ($berat > $tableZscoreBoys14Week[$bulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreBoys14Week[$bulan]["SD0"]) / ($tableZscoreBoys14Week[$bulan]["SD1"] - $tableZscoreBoys14Week[$bulan]["SD0"]);
+                        return $bbu;
+                    }
+                    break;
+                case "Perempuan":
+                    if ($berat < $tableZscoreGirls14Week[$bulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreGirls14Week[$bulan]["SD0"]) / ($tableZscoreGirls14Week[$bulan]["SD0"] - $tableZscoreGirls14Week[$bulan]["SD1neg"]);
+                        return $bbu;
+                    } else if ($berat > $tableZscoreGirls14Week[$bulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreGirls14Week[$bulan]["SD0"]) / ($tableZscoreGirls14Week[$bulan]["SD1"] - $tableZscoreGirls14Week[$bulan]["SD0"]);
+                        return $bbu;
+                    }
+                    break;
+            }
+        } else {
+            switch ($this->child->jenis_kelamin) {
+                case "Laki-laki":
+                    if ($berat < $tableZscoreBoys[$umurBulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreBoys[$umurBulan]["SD0"]) / ($tableZscoreBoys[$umurBulan]["SD0"] - $tableZscoreBoys[$umurBulan]["SD1neg"]);
+                        return $bbu;
+                    } else if ($berat > $tableZscoreBoys[$umurBulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreBoys[$umurBulan]["SD0"]) / ($tableZscoreBoys[$umurBulan]["SD1"] - $tableZscoreBoys[$umurBulan]["SD0"]);
+                        return $bbu;
+                    }
+                    break;
+                case "Perempuan":
+                    if ($berat < $tableZscoreGirls[$umurBulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreGirls[$umurBulan]["SD0"]) / ($tableZscoreGirls[$umurBulan]["SD0"] - $tableZscoreGirls[$umurBulan]["SD1neg"]);
+                        return $bbu;
+                    } else if ($berat > $tableZscoreGirls[$umurBulan]["SD0"]) {
+                        $bbu = ($berat - $tableZscoreGirls[$umurBulan]["SD0"]) / ($tableZscoreGirls[$umurBulan]["SD1"] - $tableZscoreGirls[$umurBulan]["SD0"]);
+                        return $bbu;
+                    }
+                    break;
+            }
         }
     }
 
@@ -898,14 +960,14 @@ class Measurement extends Model
     function klasifikasiBBU($umur, $bb_u)
     {
         if ($umur >= 0 && $umur <= 60) {
-            if ($bb_u > 1) {
-                return "Berat badan lebih";
-            } else if ($bb_u >= -2 && $bb_u <= 1) {
-                return "Berat badan normal";
+            if ($bb_u < -3) {
+                return "Berat badan sangat kurang";
             } else if ($bb_u >= -3 && $bb_u < -2) {
                 return "Berat badan kurang";
-            } else if ($bb_u < -3) {
-                return "Berat badan sangat kurang";
+            } else if ($bb_u >= -2 && $bb_u <= 1) {
+                return "Berat badan normal";
+            } else if ($bb_u > 1) {
+                return "Risiko Berat badan lebih";
             } else {
                 return "Klasifikasi tidak tersedia";
             }
@@ -933,22 +995,21 @@ class Measurement extends Model
         }
     }
 
-    function klasifikasiBBTB($umur, $bb_tb)
-    {
-        if ($umur >= 0 && $umur <= 60) {
-            if ($bb_tb < -3) {
-                return "Sangat kurus";
-            } else if ($bb_tb >= -3 && $bb_tb < -2) {
-                return "Kurus";
-            } else if ($bb_tb >= -2 && $bb_tb <= 2) {
-                return "Normal";
-            } else if ($bb_tb > 2) {
-                return "Gemuk";
-            } else {
-                return "Klasifikasi tidak tersedia";
-            }
+    function klasifikasiBBTB($umur, $zScore) {
+        if ($zScore < -3) {
+            return "Gizi buruk";
+        } else if ($zScore >= -3 && $zScore < -2) {
+            return "Gizi kurang";
+        } else if ($zScore >= -2 && $zScore <= 1) {
+            return "Gizi baik)";
+        } else if ($zScore > 1 && $zScore <= 2) {
+            return "Berisiko gizi lebih";
+        } else if ($zScore > 2 && $zScore <= 3) {
+            return "Gizi lebih";
+        } else if ($zScore > 3) {
+            return "Obesitas";
         } else {
-            return "Usia tidak valid untuk klasifikasi ini";
+            return "Klasifikasi tidak tersedia";
         }
     }
 }

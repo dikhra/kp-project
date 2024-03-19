@@ -36,4 +36,22 @@ class MeasurementController extends Controller
             return redirect('/pengukuran_anak/' . $request->nik)->with('error', 'Data Pengukuran Gagal Ditambahkan');
         }
     }
+
+    public function update()
+    {
+    }
+
+
+    public function delete($id)
+    {
+        $measurement = Measurement::find($id);
+        $nik = $measurement->nik;
+        $measurement->delete();
+
+        if ($measurement) {
+            return redirect('/pengukuran_anak/' . $nik)->with('success', 'Data Pengukuran Berhasil Dihapus');
+        } else {
+            return redirect('/pengukuran_anak/' . $nik)->with('error', 'Data Pengukuran Gagal Dihapus');
+        }
+    }
 }
