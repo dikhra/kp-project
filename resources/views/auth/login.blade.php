@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Login</title>
+    <link rel="stylesheet" href="css/style-login.css">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,8 +33,28 @@
 </head>
 
 <body class="bg-gradient-primary">
-
-
+        <div class="container">
+            <div class="login">
+                <form action="">
+                    <h1>Login</h1>
+                    <hr>
+                    <label for="">Email</label>
+                    <input type="text" 
+                    placeholder="example@gmail.com">
+                    <label for="">Password</label>
+                    <input type="password"
+                    placeholder="password">
+                    
+                    <button>Login</button>
+                    <p>
+                        <a href="#">Forgot Password</a>
+                    </p>
+    </form>
+        </div>
+        <div class="right">
+            <img src="kesehatan.jfif" alt="" srcset="">
+        </div>
+    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
