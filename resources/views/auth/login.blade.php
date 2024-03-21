@@ -52,7 +52,7 @@
     </form>
         </div>
         <div class="right">
-            <img src="kesehatan.jfif" alt="" srcset="">
+            <img src="https://th.bing.com/th/id/OIP.vMweS6YJfyjK03o3zfnldAAAAA?rs=1&pid=ImgDetMain" alt="logo" srcset="">
         </div>
     </div>
 
