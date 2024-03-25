@@ -10,7 +10,6 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Login</title>
-    <link rel="stylesheet" href="css/style-login.css">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,40 +19,70 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    {{-- <style>
-        /* CSS untuk mengatur container agar berada di tengah layar */
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-    </style> --}}
+    <style>
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .logo {
+        max-width: 80%;
+        max-height: auto;
+    }
+</style>
+
 
 </head>
 
 <body class="bg-gradient-primary">
-        <div class="container">
-            <div class="login">
-                <form action="">
-                    <h1>Login</h1>
-                    <hr>
-                    <label for="">Email</label>
-                    <input type="text" 
-                    placeholder="example@gmail.com">
-                    <label for="">Password</label>
-                    <input type="password"
-                    placeholder="password">
-                    
-                    <button>Login</button>
-                    <p>
-                        <a href="#">Forgot Password</a>
-                    </p>
-    </form>
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block d-flex">
+                            <div class="logo-container">
+                                    <img src="https://th.bing.com/th/id/OIP.hcj-MGUjrfLONHWKe1v8SAAAAA?rs=1&pid=ImgDetMain" alt="logo">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h1 text-gray-900 mb-4">Silahkan Login</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address...">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Password">
+                                        </div>
+                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                            Login
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-        <div class="right">
-            <img src="https://th.bing.com/th/id/OIP.vMweS6YJfyjK03o3zfnldAAAAA?rs=1&pid=ImgDetMain" alt="logo" srcset="">
-        </div>
+
     </div>
 
     <!-- Bootstrap core JavaScript-->

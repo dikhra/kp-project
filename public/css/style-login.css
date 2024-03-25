@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: rgb(65, 223, 65);
 }
 
 .container {
@@ -81,7 +82,7 @@ button {
     cursor: pointer;
     margin-top: 20px;
     border-radius: 5px;
-    background: #ffa12c ;
+    background: #05af24 ;
 }
 
 button:hover {
